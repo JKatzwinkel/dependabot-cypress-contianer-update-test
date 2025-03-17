@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4.2.2
 
       - name: install yq
-        run: apt-get update && apt-get install yq
+        run: sudo apt-get update && sudo apt-get install yq
 
       - name: update cypress docker compose service
         run: |
