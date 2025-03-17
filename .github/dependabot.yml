@@ -1,0 +1,17 @@
+---
+
+version: 2
+
+updates:
+
+  - package-ecosystem: npm
+    directories:
+      - /src/test/e2e
+    schedule:
+      interval: daily
+    commit-message:
+      prefix: ":dependabot"
+    reviewers:
+      - jkatzwinkel
+
+...

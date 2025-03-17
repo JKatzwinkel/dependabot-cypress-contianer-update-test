@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "cypress": "^14.0.1",
+    "cypress-terminal-report": "^7.1.0",
+    "eslint-plugin-cypress": "^4.1.0"
+  },
+  "scripts": {
+    "cy": "npx cypress run",
+    "lint": "npx eslint cypress/tests"
+  }
+}
