@@ -9,6 +9,8 @@ on:
   push:
     branches:
       - 'dependabot/npm_and_yarn/src/test/e2e/cypress-**'
+    paths:
+      - 'src/test/e2e/*.json'
 
 jobs:
   update-cypress-container:
