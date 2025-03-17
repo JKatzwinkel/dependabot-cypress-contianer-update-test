@@ -3,7 +3,7 @@
 name: update-cypress-container
 
 on:
-  pull-request:
+  pull_request:
     branches:
       - 'dependabot/npm_and_yarn/src/test/e2e/cypress-**'
 
