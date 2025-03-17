@@ -1,0 +1,31 @@
+---
+
+name: update-cypress-container
+
+on:
+  pull-request:
+    branches:
+      - 'dependabot/npm_and_yarn/src/test/e2e/cypress-**'
+
+jobs:
+  update-cypress-container:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v4.2.2
+
+      - name: install yq
+        run: apt-get update && apt-get install yq
+
+      - name: update cypress docker compose service
+        run: |
+          cur=$(yq -r .services.e2e.image docker-compose.yml | cut -d: -f2)
+          cd src/test/e2e
+          new=$(npx cypress --version --component package)
+          cd -
+          sed -i 's/included:'${cur}'/included:'${new}'/' docker-compose.yml
+          git add docker-compose.yml
+          git commit -m "e2e: update cypress from ${cur} to ${new}"
+          git push
+
+...
