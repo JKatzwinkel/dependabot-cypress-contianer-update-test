@@ -6,6 +6,9 @@ on:
   pull_request:
     branches:
       - 'dependabot/npm_and_yarn/src/test/e2e/cypress-**'
+  push:
+    branches:
+      - 'dependabot/npm_and_yarn/src/test/e2e/cypress-**'
 
 jobs:
   update-cypress-container:
