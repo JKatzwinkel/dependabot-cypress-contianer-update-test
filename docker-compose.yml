@@ -16,7 +16,7 @@ services:
 
   e2e:
     container_name: e2e
-    image: cypress/included:14.2.1
+    image: cypress/included:14.3.3
     working_dir: /e2e
     volumes:
       - ./src/test/e2e:/e2e
