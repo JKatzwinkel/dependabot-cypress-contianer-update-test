@@ -19,6 +19,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4.2.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - run: ./gradlew -v
 
@@ -33,6 +35,7 @@ jobs:
             to %targetVersion%
           labels: dependencies, gradle
           reviewers: jkatzwinkel
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: determine change status
         id: changed
