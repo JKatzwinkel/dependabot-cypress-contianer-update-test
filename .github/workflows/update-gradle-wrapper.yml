@@ -35,7 +35,7 @@ jobs:
             to %targetVersion%
           labels: dependencies, gradle
           reviewers: jkatzwinkel
-          token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: determine change status
         id: changed
