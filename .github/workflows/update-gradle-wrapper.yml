@@ -13,6 +13,10 @@ jobs:
       changed: ${{ steps.changed.outputs.changed }}
       ref: ${{ steps.ref.outputs.ref }}
 
+    permissions:
+      contents: write
+      pull-requests: write
+
     steps:
       - uses: actions/checkout@v4.2.2
 
